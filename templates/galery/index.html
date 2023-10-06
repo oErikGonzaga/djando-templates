@@ -1,5 +1,10 @@
+<!-- Estende o template base 'galery/base.html' -->
 {% extends 'galery/base.html' %}
+
+<!-- Carrega os arquivos estáticos (CSS, imagens, etc.) -->
 {% load static %}
+
+<!-- Define o bloco de conteúdo chamado 'content' -->
 {% block content %}
             <section class="conteudo">
                 <section class="banner">
@@ -19,7 +24,11 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
+
+                            <!-- Repetição de cards -->
                             <li class="card">
+
+                                <!-- Link para a página de imagem -->
                                 <a href="{% url 'image'%}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png'  %}" alt="foto">
                                 </a>
