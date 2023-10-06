@@ -5,5 +5,5 @@ def index(request):
     return render(request, 'galery/index.html')
 
 
-def imagem(request):
-    return render(request, 'galery/imagem.html')
+def image(request):
+    return render(request, 'galery/image.html')
