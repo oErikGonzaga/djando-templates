@@ -10,5 +10,5 @@ urlpatterns = [
     path('', index, name='index'),
 
     # Define a URL 'image/' para a função 'image' e nomeia-a como 'image'
-    path('image/', image, name='image')
+    path('image/<int:foto_id>', image, name='image')
 ]

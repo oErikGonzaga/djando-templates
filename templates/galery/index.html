@@ -31,7 +31,7 @@
                             <li class="card">
 
                                 <!-- Link para a página de imagem -->
-                                <a href="{% url 'image' %}">
+                                <a href="{% url 'image' fotografia.id %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/' %}{{ fotografia.foto }}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
