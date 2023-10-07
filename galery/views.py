@@ -3,8 +3,16 @@ from django.shortcuts import render
 
 
 # Função para renderizar a página inicial
+
 def index(request):
-    return render(request, 'galery/index.html')
+    dados = {
+        1: {"nome": "Nebulosa de Carina",
+            "legenda": "webbtelescope.org / NASA / James Webb"},
+        2: {"nome": "Galáxia NGC 1079",
+            "legenda": "nasa.org / NASA / Hubble"}
+    }
+
+    return render(request, 'galery/index.html', {"cards": dados})
 
 
 # Função para renderizar a página de imagem
