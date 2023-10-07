@@ -1,18 +1,13 @@
 # Importa o módulo 'render' de 'django.shortcuts'
 from django.shortcuts import render
-
+from galery.models import Fotografia
 
 # Função para renderizar a página inicial
 
-def index(request):
-    dados = {
-        1: {"nome": "Nebulosa de Carina",
-            "legenda": "webbtelescope.org / NASA / James Webb"},
-        2: {"nome": "Galáxia NGC 1079",
-            "legenda": "nasa.org / NASA / Hubble"}
-    }
 
-    return render(request, 'galery/index.html', {"cards": dados})
+def index(request):
+    fotografias = Fotografia.objects.all()
+    return render(request, 'galery/index.html', {"cards": fotografias})
 
 
 # Função para renderizar a página de imagem
