@@ -6,6 +6,7 @@
 
 <!-- Define o bloco de conteúdo chamado 'content' -->
 {% block content %}
+
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png'  %}" alt="banner Space">
@@ -28,6 +29,7 @@
                                 <!-- Repetição de cards -->
                             {% if cards %}
                             {% for fotografia in cards %}
+
                             <li class="card">
 
                                 <!-- Link para a página de imagem -->
@@ -45,13 +47,16 @@
                                     </div>
                                 </div>
                             </li>
+
                             {% endfor %}
                             {% else %}
                             {% endif %}
+
                         </ul>
                     </div>
                 </section>
             </section>
         </main>
     </div>
+
 {% endblock %}
