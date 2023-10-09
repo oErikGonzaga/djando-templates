@@ -236,12 +236,22 @@ table {
     color: #FFFFFF;
 }
 
-.imagem__texto {
-    font-size: 1rem;
+@supports (-ms-ime-align: auto) {
+    .imagem__texto {
+        font-size: 1rem;
+        white-space: pre-wrap;
+    }
 }
 
+@supports (-ms-ime-align: auto) {
 .imagem__descricao {
     font-size: 0.7rem;
+    white-space: pre-wrap;
+    }
+}
+
+.white-space-pre-line {
+    white-space: pre-line;
 }
 
 .menu-lateral {

@@ -6,11 +6,14 @@ from galery.models import Fotografia
 
 
 def index(request):
-    fotografias = Fotografia.objects.all()
+    fotografias = Fotografia.objects.filter(publicada=True)
     return render(request, 'galery/index.html', {"cards": fotografias})
 
 
 # Função para renderizar a página de imagem
 def image(request, foto_id):
     fotografia = get_object_or_404(Fotografia, pk=foto_id)
-    return render(request, 'galery/image.html', {'fotografia': fotografia})
+    texto_descricao = fotografia.descricao
+    texto_formatado = texto_descricao.replace('<br>', '\n')
+    return render(request, 'galery/image.html',
+                  {'fotografia': fotografia, 'texto_formatado': texto_formatado})
