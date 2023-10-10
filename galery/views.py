@@ -17,3 +17,7 @@ def image(request, foto_id):
     texto_formatado = texto_descricao.replace('<br>', '\n')
     return render(request, 'galery/image.html',
                   {'fotografia': fotografia, 'texto_formatado': texto_formatado})
+
+
+def buscar(request):
+    return render(request, 'galery/buscar.html')
