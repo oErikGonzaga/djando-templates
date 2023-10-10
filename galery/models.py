@@ -12,7 +12,7 @@ OPCOES_CATEGORIA = [
 
 class Fotografia(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
-    foto = models.CharField(max_length=100, null=False, blank=False)
+    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
     legenda = models.CharField(max_length=100, null=False, blank=False)
     data_fotografia = models.DateTimeField(default=datetime.now(), blank=False)
     categoria = models.CharField(max_length=100, choices=OPCOES_CATEGORIA, default='')

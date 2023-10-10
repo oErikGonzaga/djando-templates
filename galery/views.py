@@ -6,7 +6,7 @@ from galery.models import Fotografia
 
 
 def index(request):
-    fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
+    fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
     return render(request, 'galery/index.html', {"cards": fotografias})
 
 
